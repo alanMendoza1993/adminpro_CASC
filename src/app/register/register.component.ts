@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Validators, FormGroup, FormControl } from '@angular/forms';
 import { UsuarioService } from '../services/service.index';
 import { Usuario } from '../models/usuario.models';
+import { Router } from '@angular/router';
+import swal from 'sweetalert';
 declare function init_plugin();
 @Component({
   selector: 'app-register',
@@ -12,7 +14,8 @@ export class RegisterComponent implements OnInit {
   forma: FormGroup;
   clikeado: boolean = false;
   constructor(
-    public usuarioService: UsuarioService
+    public usuarioService: UsuarioService,
+    public router: Router
   ) { }
 
   ngOnInit() {
@@ -55,6 +58,8 @@ export class RegisterComponent implements OnInit {
     this.usuarioService.crearUsuario(usuario)
     .subscribe( resp => {
       console.log(resp);
+      this.router.navigate(['/login']);
+      swal('Felicidades!', 'Ya esta registrado', 'success');
     });
 
     this.clikeado = true;

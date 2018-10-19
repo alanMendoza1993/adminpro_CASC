@@ -40,9 +40,9 @@
                         Las contraseñas no son iguales
                     </p>
                 </div>
-                <div class="form-group" *ngIf="this.clikeado && this.forma.controls['condiciones']">
+                <div class="form-group" *ngIf="!this.forma.controls['condiciones'].value && this.forma.controls['condiciones'].touched">
                     <p class="text-danger">
-                        Tienes que aceptar las condiciones
+                        Tienes que aceptar las condiciones {{this.forma.controls['condiciones'].value}}
                     </p>
                 </div>
                 <div class="form-group text-center m-t-20">
