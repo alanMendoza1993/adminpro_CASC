@@ -6,7 +6,8 @@ import {
   SettingsService,
   SharedService,
   SidebarService,
-  UsuarioService
+  UsuarioService,
+  LoginGuardGuard
 } from './service.index';
 
 @NgModule({
@@ -18,7 +19,8 @@ import {
     SharedService,
     SidebarService,
     SettingsService,
-    UsuarioService
+    UsuarioService,
+    LoginGuardGuard
   ],
   declarations: []
 })

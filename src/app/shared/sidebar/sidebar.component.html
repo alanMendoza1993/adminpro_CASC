@@ -12,7 +12,7 @@
                     <ul aria-expanded="false" class="collapse">
                         <li><a routerLink="/graficas1">Graficas</a></li>
                         <li><a routerLinkActive="active" routerLink="/account-settings">Account Setting</a></li>
-                        <li><a routerLink="/login">Login</a></li>
+                        <li><a class="puntero" (click)="usuarioService.logout()">LogOut</a></li>
                     </ul>
                 </li>
                 <li class="nav-devider"></li>

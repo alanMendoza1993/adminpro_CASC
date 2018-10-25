@@ -43,18 +43,21 @@ export class RegisterComponent implements OnInit {
       };
     };
   }
-
- 
-
-  registrarUsuario() {
+   registrarUsuario() {
    /*  if (this.forma.controls['password2'].dirty) {
 
     } */
+
+
     let usuario = new Usuario(
       this.forma.value.nombre,
       this.forma.value.correo,
       this.forma.value.password
     );
+    if (!this.forma.controls['condiciones'].value) {
+      return ;
+    }
+
     this.usuarioService.crearUsuario(usuario)
     .subscribe( resp => {
       console.log(resp);
